@@ -27,7 +27,7 @@ public class DataEntryPanel {
 	}
 
 	/**
-	 * Create the application .
+	 * Create the application
 	 */
 	public DataEntryPanel() {
 		initialize();
