@@ -84,7 +84,7 @@ public class DataEntryPanel {
 		DataEntryFrame = new JFrame();
 		DataEntryFrame.setResizable(false);
 		DataEntryFrame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 18));
-		DataEntryFrame.getContentPane().setBackground(new Color(153, 204, 204));
+		DataEntryFrame.getContentPane().setBackground(new Color(102, 204, 204));
 		
 		JPanel jpnlLogo = new JPanel();
 		jpnlLogo.setBackground(SystemColor.activeCaptionBorder);
@@ -189,6 +189,82 @@ public class DataEntryPanel {
 		JPanel pnlCJ = new JPanel();
 		pnlCJ.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		pnlCJ.setBackground(new Color(153, 204, 204));
+		
+		JLabel lblCJ = new JLabel("Course Join?");
+		lblCJ.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton rdbtnCJYes = new JRadioButton("Yes");
+		btngrpCJ.add(rdbtnCJYes);
+		rdbtnCJYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnCJYes.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton rdbtnCJNo = new JRadioButton("No");
+		btngrpCJ.add(rdbtnCJNo);
+		rdbtnCJNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnCJNo.setBackground(new Color(153, 204, 204));
+		
+		JPanel jpnlCJFup = new JPanel();
+		jpnlCJFup.setBackground(new Color(153, 204, 204));
+		
+		JLabel label_5 = new JLabel("No Course Join Follw-ups");
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_5.setBackground(new Color(153, 204, 204));
+		
+		JLabel lblEnquiryMade = new JLabel("Enquiry made?");
+		lblEnquiryMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton rdbtnEnqMadeYes = new JRadioButton("Yes");
+		btngrpEnqMade.add(rdbtnEnqMadeYes);
+		rdbtnEnqMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnEnqMadeYes.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton rdbtnEnqMadeNo = new JRadioButton("No");
+		btngrpEnqMade.add(rdbtnEnqMadeNo);
+		rdbtnEnqMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnEnqMadeNo.setBackground(new Color(153, 204, 204));
+		
+		JPanel pnlEnqFup = new JPanel();
+		pnlEnqFup.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox cbEnqFup3 = new JCheckBox("Follow-up 3");
+		cbEnqFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbEnqFup3.setBackground(new Color(153, 204, 204));
+		
+		JLabel label_3 = new JLabel("No Enquiry Follw-ups");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_3.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox cbEnqFup1 = new JCheckBox("Follow-up 1");
+		cbEnqFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbEnqFup1.setBackground(new Color(153, 204, 204));
+		
+		JLabel label = new JLabel("Appointment made?");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton rdbtnAppMadeYes = new JRadioButton("Yes");
+		btngrpAppointMade.add(rdbtnAppMadeYes);
+		rdbtnAppMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnAppMadeYes.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton rdbtnAppMadeNo = new JRadioButton("No");
+		btngrpAppointMade.add(rdbtnAppMadeNo);
+		rdbtnAppMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		rdbtnAppMadeNo.setBackground(new Color(153, 204, 204));
+		
+		JPanel JpnlAppFup = new JPanel();
+		JpnlAppFup.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox cbAppFup3 = new JCheckBox("Follow-up 3");
+		cbAppFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbAppFup3.setBackground(new Color(153, 204, 204));
+		
+		JLabel lblAppFup = new JLabel("No Appointment Follw-ups");
+		lblAppFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JCheckBox cbAppFup1 = new JCheckBox("Follow-up 1");
+		cbAppFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbAppFup1.setBackground(new Color(153, 204, 204));
+		
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -321,26 +397,6 @@ public class DataEntryPanel {
 					.addContainerGap())
 		);
 		
-		JLabel lblCJ = new JLabel("Course Join?");
-		lblCJ.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JRadioButton rdbtnCJYes = new JRadioButton("Yes");
-		btngrpCJ.add(rdbtnCJYes);
-		rdbtnCJYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnCJYes.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnCJNo = new JRadioButton("No");
-		btngrpCJ.add(rdbtnCJNo);
-		rdbtnCJNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnCJNo.setBackground(new Color(153, 204, 204));
-		
-		JPanel jpnlCJFup = new JPanel();
-		jpnlCJFup.setBackground(new Color(153, 204, 204));
-		
-		JLabel label_5 = new JLabel("No Course Join Follw-ups");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_5.setBackground(new Color(153, 204, 204));
-		
 		JCheckBox CbCJFup = new JCheckBox("Follow-up");
 		CbCJFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		CbCJFup.setBackground(new Color(153, 204, 204));
@@ -395,33 +451,7 @@ public class DataEntryPanel {
 		);
 		pnlCJ.setLayout(gl_pnlCJ);
 		
-		JLabel lblEnquiryMade = new JLabel("Enquiry made?");
-		lblEnquiryMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JRadioButton rdbtnEnqMadeYes = new JRadioButton("Yes");
-		btngrpEnqMade.add(rdbtnEnqMadeYes);
-		rdbtnEnqMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnEnqMadeYes.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnEnqMadeNo = new JRadioButton("No");
-		btngrpEnqMade.add(rdbtnEnqMadeNo);
-		rdbtnEnqMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnEnqMadeNo.setBackground(new Color(153, 204, 204));
-		
-		JPanel pnlEnqFup = new JPanel();
-		pnlEnqFup.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox cbEnqFup3 = new JCheckBox("Follow-up 3");
-		cbEnqFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbEnqFup3.setBackground(new Color(153, 204, 204));
-		
-		JLabel label_3 = new JLabel("No Enquiry Follw-ups");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label_3.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox cbEnqFup1 = new JCheckBox("Follow-up 1");
-		cbEnqFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbEnqFup1.setBackground(new Color(153, 204, 204));
 		
 		JCheckBox cbEnqFup2 = new JCheckBox("Follow-up 2");
 		cbEnqFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -480,32 +510,7 @@ public class DataEntryPanel {
 		);
 		jpnlEnqMade.setLayout(gl_jpnlEnqMade);
 		
-		JLabel label = new JLabel("Appointment made?");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JRadioButton rdbtnAppMadeYes = new JRadioButton("Yes");
-		btngrpAppointMade.add(rdbtnAppMadeYes);
-		rdbtnAppMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnAppMadeYes.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnAppMadeNo = new JRadioButton("No");
-		btngrpAppointMade.add(rdbtnAppMadeNo);
-		rdbtnAppMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnAppMadeNo.setBackground(new Color(153, 204, 204));
-		
-		JPanel JpnlAppFup = new JPanel();
-		JpnlAppFup.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox cbAppFup3 = new JCheckBox("Follow-up 3");
-		cbAppFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbAppFup3.setBackground(new Color(153, 204, 204));
-		
-		JLabel lblAppFup = new JLabel("No Appointment Follw-ups");
-		lblAppFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JCheckBox cbAppFup1 = new JCheckBox("Follow-up 1");
-		cbAppFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbAppFup1.setBackground(new Color(153, 204, 204));
 		
 		JCheckBox cbAppFup2 = new JCheckBox("Follow-up 2");
 		cbAppFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -572,9 +577,11 @@ public class DataEntryPanel {
 		jpnlAppMade.setLayout(gl_jpnlAppMade);
 		
 		JTextArea taCJRmk = new JTextArea();
+		taCJRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		scrpCJRmk.setViewportView(taCJRmk);
 		
 		JTextArea txtaAppReRmk = new JTextArea();
+		txtaAppReRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		scrpAppReRmk.setViewportView(txtaAppReRmk);
 		
 		lblThisJpanelIs = new JLabel("this jpanel is for eyevision name and logo");
