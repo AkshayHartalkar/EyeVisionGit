@@ -24,6 +24,10 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
 
 public class DataEntryPanel {
 
@@ -124,22 +128,6 @@ public class DataEntryPanel {
 		rdbtnWalkin.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnWalkin.setBackground(new Color(153, 204, 204));
 		
-		JLabel lblAppointmentMade = new JLabel("Appointment made?");
-		lblAppointmentMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JRadioButton rdbtnYes = new JRadioButton("Yes");
-		btngrpAppointMade.add(rdbtnYes);
-		rdbtnYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnYes.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnNo = new JRadioButton("No");
-		btngrpAppointMade.add(rdbtnNo);
-		rdbtnNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnNo.setBackground(new Color(153, 204, 204));
-		
-		JPanel jpnlAppFup = new JPanel();
-		jpnlAppFup.setBackground(new Color(153, 204, 204));
-		
 		JLabel lblBranch = new JLabel("Branch:");
 		lblBranch.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
@@ -167,8 +155,8 @@ public class DataEntryPanel {
 		txtfldAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtfldAppReDate.setColumns(10);
 		
-		JLabel lblTime = new JLabel("Time:");
-		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		JLabel lblAppReRmkTime = new JLabel("Time:");
+		lblAppReRmkTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		txtfldAppReTime = new JTextField();
 		txtfldAppReTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -179,108 +167,6 @@ public class DataEntryPanel {
 		
 		JScrollPane scrpAppReRmk = new JScrollPane();
 		
-		JLabel lblEnquiryMade = new JLabel("Enquiry made?");
-		lblEnquiryMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JRadioButton rdbtnEnquiryYes = new JRadioButton("Yes");
-		btngrpEnqMade.add(rdbtnEnquiryYes);
-		rdbtnEnquiryYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnEnquiryYes.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnEnquiryNo = new JRadioButton("No");
-		btngrpEnqMade.add(rdbtnEnquiryNo);
-		rdbtnEnquiryNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnEnquiryNo.setBackground(new Color(153, 204, 204));
-		
-		JPanel jpnlNoEnqFup = new JPanel();
-		jpnlNoEnqFup.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox checkBox = new JCheckBox("Follow-up 3");
-		checkBox.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		checkBox.setBackground(new Color(153, 204, 204));
-		
-		JLabel lblNoEnquiryFollwups = new JLabel("No Enquiry Follw-ups");
-		lblNoEnquiryFollwups.setBackground(new Color(153, 204, 204));
-		lblNoEnquiryFollwups.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JCheckBox checkBox_1 = new JCheckBox("Follow-up 1");
-		checkBox_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		checkBox_1.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox checkBox_2 = new JCheckBox("Follow-up 2");
-		checkBox_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		checkBox_2.setBackground(new Color(153, 204, 204));
-		GroupLayout gl_jpnlNoEnqFup = new GroupLayout(jpnlNoEnqFup);
-		gl_jpnlNoEnqFup.setHorizontalGroup(
-			gl_jpnlNoEnqFup.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 205, Short.MAX_VALUE)
-				.addGroup(gl_jpnlNoEnqFup.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_jpnlNoEnqFup.createParallelGroup(Alignment.LEADING)
-						.addComponent(checkBox, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNoEnquiryFollwups, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-						.addComponent(checkBox_1)
-						.addComponent(checkBox_2, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
-		gl_jpnlNoEnqFup.setVerticalGroup(
-			gl_jpnlNoEnqFup.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 127, Short.MAX_VALUE)
-				.addGroup(gl_jpnlNoEnqFup.createSequentialGroup()
-					.addComponent(lblNoEnquiryFollwups, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(checkBox_1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(checkBox_2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(checkBox, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-		);
-		jpnlNoEnqFup.setLayout(gl_jpnlNoEnqFup);
-		
-		JLabel lblCourseJoin = new JLabel("Course Join?");
-		lblCourseJoin.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JRadioButton rdbtnCJNo = new JRadioButton("No");
-		btngrpCJ.add(rdbtnCJNo);
-		rdbtnCJNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnCJNo.setBackground(new Color(153, 204, 204));
-		
-		JRadioButton rdbtnCJYes = new JRadioButton("Yes");
-		btngrpCJ.add(rdbtnCJYes);
-		rdbtnCJYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		rdbtnCJYes.setBackground(new Color(153, 204, 204));
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(153, 204, 204));
-		
-		JLabel lblNoCourseJoin = new JLabel("No Course Join Follw-ups");
-		lblNoCourseJoin.setBackground(new Color(153, 204, 204));
-		lblNoCourseJoin.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JCheckBox chckbxFollowup = new JCheckBox("Follow-up");
-		chckbxFollowup.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		chckbxFollowup.setBackground(new Color(153, 204, 204));
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNoCourseJoin, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-						.addComponent(chckbxFollowup))
-					.addContainerGap())
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addComponent(lblNoCourseJoin, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(chckbxFollowup)
-					.addContainerGap(65, Short.MAX_VALUE))
-		);
-		panel_1.setLayout(gl_panel_1);
-		
 		JLabel lblRemark = new JLabel("Course Join Remark:");
 		lblRemark.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
@@ -288,6 +174,21 @@ public class DataEntryPanel {
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel_2.setBackground(new Color(153, 204, 204));
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel_4.setBackground(new Color(153, 204, 204));
+		
+		JLabel lblAppTime = new JLabel("Time:");
+		lblAppTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel_1.setBackground(new Color(153, 204, 204));
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -298,92 +199,72 @@ public class DataEntryPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(txtfldContact, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 640, GroupLayout.PREFERRED_SIZE)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblAppointmentReschedulereminder)
+										.addComponent(lblAppointmentDateTime))
+									.addGap(16)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblAppReRmkTime)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(rdbtnEnquiry, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
-								.addComponent(lblAppointmentMade))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(rdbtnYes, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-								.addComponent(rdbtnCentre, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
-							.addGap(10)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addComponent(rdbtnEnquiry, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(rdbtnCentre, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addComponent(rdbtnWalkin, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
+								.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 641, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(rdbtnNo)
-									.addGap(14)
-									.addComponent(jpnlAppFup, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addComponent(rdbtnWalkin, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblBranch)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblAppointmentDateTime))
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 840, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(280)
-							.addComponent(btnSubmit))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(lblBranch)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblRemark)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(scrpCJRmk))
-								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-									.addComponent(lblFirstName)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+									.addComponent(lblAppointmentReschedulereminderRemark)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 290, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtfldContact))
+										.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+											.addComponent(lblFirstName)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
 									.addGap(18)
 									.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(textField))
-								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(lblAppointmentReschedulereminderRemark)
-												.addComponent(lblAppointmentReschedulereminder))
-											.addPreferredGap(ComponentPlacement.RELATED))
-										.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblCourseJoin)
-													.addPreferredGap(ComponentPlacement.UNRELATED)
-													.addComponent(rdbtnCJYes, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-													.addComponent(rdbtnCJNo, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblEnquiryMade)
-													.addPreferredGap(ComponentPlacement.UNRELATED)
-													.addComponent(rdbtnEnquiryYes, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(rdbtnEnquiryNo, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
-											.addGap(98)))
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(jpnlNoEnqFup, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-										.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 290, GroupLayout.PREFERRED_SIZE)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-													.addGap(16)
-													.addComponent(lblTime))
-												.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-												.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))))))))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(btnSubmit)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblRemark)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))))
+					.addGap(24))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 675, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -395,7 +276,7 @@ public class DataEntryPanel {
 						.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGap(11)
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtfldContact, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
@@ -408,65 +289,291 @@ public class DataEntryPanel {
 							.addComponent(rdbtnCentre, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 							.addComponent(rdbtnWalkin, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
 					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblBranch, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblAppointmentMade, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-									.addComponent(rdbtnNo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-									.addComponent(rdbtnYes, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
-							.addGap(106)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblBranch, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(jpnlAppFup, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))
-					.addGap(12)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+							.addComponent(lblAppointmentDateTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblAppointmentReschedulereminder, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblAppointmentDateTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-							.addGap(12))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblAppointmentReschedulereminder, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-							.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-							.addComponent(lblTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-							.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)))
-					.addGap(11)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblAppReRmkTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblAppointmentReschedulereminderRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE))
-					.addGap(14)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-									.addComponent(lblEnquiryMade, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-									.addComponent(rdbtnEnquiryYes, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
-								.addComponent(rdbtnEnquiryNo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
-							.addGap(109)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-									.addComponent(rdbtnCJYes, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-									.addComponent(lblCourseJoin, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
-								.addComponent(rdbtnCJNo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
-							.addGap(33))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(jpnlNoEnqFup, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+					.addGap(9)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
 					.addComponent(btnSubmit)
 					.addContainerGap())
 		);
+		
+		JLabel label_4 = new JLabel("Course Join?");
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton radioButton_4 = new JRadioButton("Yes");
+		btngrpCJ.add(radioButton_4);
+		radioButton_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton_4.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton radioButton_5 = new JRadioButton("No");
+		btngrpCJ.add(radioButton_5);
+		radioButton_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton_5.setBackground(new Color(153, 204, 204));
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(153, 204, 204));
+		
+		JLabel label_5 = new JLabel("No Course Join Follw-ups");
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_5.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox_6 = new JCheckBox("Follow-up");
+		checkBox_6.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_6.setBackground(new Color(153, 204, 204));
+		GroupLayout gl_panel_6 = new GroupLayout(panel_6);
+		gl_panel_6.setHorizontalGroup(
+			gl_panel_6.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 237, Short.MAX_VALUE)
+				.addGroup(gl_panel_6.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING)
+						.addComponent(checkBox_6)
+						.addComponent(label_5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		gl_panel_6.setVerticalGroup(
+			gl_panel_6.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_6.createSequentialGroup()
+					.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(checkBox_6)
+					.addContainerGap(31, Short.MAX_VALUE))
+		);
+		panel_6.setLayout(gl_panel_6);
+		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
+					.addGap(6)
+					.addComponent(radioButton_4, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(radioButton_5, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+					.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(3)
+							.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(1)
+							.addComponent(radioButton_4, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(1)
+							.addComponent(radioButton_5, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(63, Short.MAX_VALUE))
+				.addComponent(panel_6, GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+		);
+		panel_1.setLayout(gl_panel_1);
+		
+		JLabel label_2 = new JLabel("Enquiry made?");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton radioButton_2 = new JRadioButton("Yes");
+		btngrpEnqMade.add(radioButton_2);
+		radioButton_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton_2.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton radioButton_3 = new JRadioButton("No");
+		btngrpEnqMade.add(radioButton_3);
+		radioButton_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton_3.setBackground(new Color(153, 204, 204));
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox = new JCheckBox("Follow-up 3");
+		checkBox.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox.setBackground(new Color(153, 204, 204));
+		
+		JLabel label_3 = new JLabel("No Enquiry Follw-ups");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		label_3.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox_1 = new JCheckBox("Follow-up 1");
+		checkBox_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_1.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox_2 = new JCheckBox("Follow-up 2");
+		checkBox_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_2.setBackground(new Color(153, 204, 204));
+		GroupLayout gl_panel_5 = new GroupLayout(panel_5);
+		gl_panel_5.setHorizontalGroup(
+			gl_panel_5.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_5.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING)
+						.addComponent(checkBox, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
+						.addComponent(checkBox_1)
+						.addComponent(checkBox_2, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(19, Short.MAX_VALUE))
+		);
+		gl_panel_5.setVerticalGroup(
+			gl_panel_5.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_5.createSequentialGroup()
+					.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+					.addGap(7)
+					.addComponent(checkBox_1)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(checkBox_2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(checkBox, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		panel_5.setLayout(gl_panel_5);
+		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
+		gl_panel_4.setHorizontalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_4.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)
+					.addGap(6)
+					.addComponent(radioButton_2, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addComponent(radioButton_3, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+					.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_panel_4.setVerticalGroup(
+			gl_panel_4.createParallelGroup(Alignment.TRAILING)
+				.addComponent(panel_5, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
+				.addGroup(Alignment.LEADING, gl_panel_4.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_4.createSequentialGroup()
+							.addGap(2)
+							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+						.addComponent(radioButton_2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+						.addComponent(radioButton_3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(84, Short.MAX_VALUE))
+		);
+		panel_4.setLayout(gl_panel_4);
+		
+		JLabel label = new JLabel("Appointment made?");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JRadioButton radioButton = new JRadioButton("Yes");
+		btngrpAppointMade.add(radioButton);
+		radioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton.setBackground(new Color(153, 204, 204));
+		
+		JRadioButton radioButton_1 = new JRadioButton("No");
+		btngrpAppointMade.add(radioButton_1);
+		radioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		radioButton_1.setBackground(new Color(153, 204, 204));
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox_3 = new JCheckBox("Follow-up 3");
+		checkBox_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_3.setBackground(new Color(153, 204, 204));
+		
+		JLabel label_1 = new JLabel("No Appointment Follw-ups");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JCheckBox checkBox_4 = new JCheckBox("Follow-up 1");
+		checkBox_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_4.setBackground(new Color(153, 204, 204));
+		
+		JCheckBox checkBox_5 = new JCheckBox("Follow-up 2");
+		checkBox_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		checkBox_5.setBackground(new Color(153, 204, 204));
+		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
+		gl_panel_3.setHorizontalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_3.createSequentialGroup()
+							.addComponent(checkBox_4)
+							.addContainerGap())
+						.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_panel_3.createSequentialGroup()
+								.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+								.addContainerGap())
+							.addGroup(gl_panel_3.createSequentialGroup()
+								.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(checkBox_3, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
+									.addComponent(checkBox_5, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE))
+								.addGap(111)))))
+		);
+		gl_panel_3.setVerticalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(checkBox_4)
+					.addGap(3)
+					.addComponent(checkBox_5, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(checkBox_3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		panel_3.setLayout(gl_panel_3);
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(label, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)
+					.addGap(16)
+					.addComponent(radioButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+					.addGap(26)
+					.addComponent(radioButton_1, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+					.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+									.addComponent(radioButton, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+									.addComponent(label, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+								.addComponent(radioButton_1, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		panel_2.setLayout(gl_panel_2);
 		
 		JTextArea taCJRmk = new JTextArea();
 		scrpCJRmk.setViewportView(taCJRmk);
@@ -474,69 +581,29 @@ public class DataEntryPanel {
 		JTextArea txtaAppReRmk = new JTextArea();
 		scrpAppReRmk.setViewportView(txtaAppReRmk);
 		
-		JLabel lblappointmentfollowup = new JLabel("No Appointment Follw-ups");
-		lblappointmentfollowup.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JCheckBox chbxFup1 = new JCheckBox("Follow-up 1");
-		chbxFup1.setBackground(new Color(153, 204, 204));
-		chbxFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		JCheckBox chbxFup2 = new JCheckBox("Follow-up 2");
-		chbxFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		chbxFup2.setBackground(new Color(153, 204, 204));
-		
-		JCheckBox chbxFup3 = new JCheckBox("Follow-up 3");
-		chbxFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		chbxFup3.setBackground(new Color(153, 204, 204));
-		GroupLayout gl_jpnlAppFup = new GroupLayout(jpnlAppFup);
-		gl_jpnlAppFup.setHorizontalGroup(
-			gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_jpnlAppFup.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
-						.addComponent(chbxFup3, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblappointmentfollowup, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-						.addComponent(chbxFup1)
-						.addComponent(chbxFup2, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
-		gl_jpnlAppFup.setVerticalGroup(
-			gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_jpnlAppFup.createSequentialGroup()
-					.addComponent(lblappointmentfollowup, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(chbxFup1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(chbxFup2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(chbxFup3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(16, Short.MAX_VALUE))
-		);
-		jpnlAppFup.setLayout(gl_jpnlAppFup);
-		
 		lblThisJpanelIs = new JLabel("this jpanel is for eyevision name and logo");
 		lblThisJpanelIs.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(109)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(99, Short.MAX_VALUE)
 					.addComponent(lblThisJpanelIs, GroupLayout.PREFERRED_SIZE, 459, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(272, Short.MAX_VALUE))
+					.addGap(93))
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
+			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(5)
+					.addContainerGap()
 					.addComponent(lblThisJpanelIs, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-					.addContainerGap())
+					.addGap(5))
 		);
 		panel.setLayout(gl_panel);
 		DataEntryFrame.getContentPane().setLayout(groupLayout);
-		DataEntryFrame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{jpnlAppFup, panel, lblThisJpanelIs, lblFirstName, txtfldFirstName, lblLastName, textField, lblContact, txtfldContact, lblCallType, rdbtnEnquiry, rdbtnCentre, rdbtnWalkin, lblAppointmentMade, rdbtnYes, rdbtnNo}));
+		DataEntryFrame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{panel, lblThisJpanelIs, lblFirstName, txtfldFirstName, lblLastName, textField, lblContact, txtfldContact, lblCallType, rdbtnEnquiry, rdbtnCentre, rdbtnWalkin}));
 		DataEntryFrame.setFont(new Font("Dialog", Font.BOLD, 12));
 		DataEntryFrame.setTitle("Customer Data Entry Window");
-		DataEntryFrame.setBounds(100, 100, 677, 965);
+		DataEntryFrame.setBounds(100, 100, 669, 993);
 		DataEntryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
