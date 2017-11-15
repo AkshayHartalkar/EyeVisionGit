@@ -40,10 +40,10 @@ public class DataEntryPanel {
 	private JLabel lblCallType;
 	private final ButtonGroup btngrpCallType = new ButtonGroup();
 	private final ButtonGroup btngrpAppointMade = new ButtonGroup();
-	private JTextField txtfldAppDate;
 	private JTextField txtfldAppTime;
-	private JTextField txtfldAppReDate;
+	private JTextField txtfldAppDate;
 	private JTextField txtfldAppReTime;
+	private JTextField txtfldAppReDate;
 	private final ButtonGroup btngrpEnqMade = new ButtonGroup();
 	private final ButtonGroup btngrpCJ = new ButtonGroup();
 
@@ -140,27 +140,27 @@ public class DataEntryPanel {
 		JLabel lblAppointmentDateTime = new JLabel("Appointment Date and Appointment Time:");
 		lblAppointmentDateTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		txtfldAppDate = new JTextField();
-		txtfldAppDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		txtfldAppDate.setColumns(10);
-		
 		txtfldAppTime = new JTextField();
 		txtfldAppTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtfldAppTime.setColumns(10);
 		
+		txtfldAppDate = new JTextField();
+		txtfldAppDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtfldAppDate.setColumns(10);
+		
 		JLabel lblAppointmentReschedulereminder = new JLabel("Appointment Reschedule/Reminder date:");
 		lblAppointmentReschedulereminder.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		txtfldAppReDate = new JTextField();
-		txtfldAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		txtfldAppReDate.setColumns(10);
-		
-		JLabel lblAppReRmkTime = new JLabel("Time:");
-		lblAppReRmkTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		txtfldAppReTime = new JTextField();
 		txtfldAppReTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtfldAppReTime.setColumns(10);
+		
+		JLabel lblAppReRmkDat = new JLabel("Date:");
+		lblAppReRmkDat.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		txtfldAppReDate = new JTextField();
+		txtfldAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtfldAppReDate.setColumns(10);
 		
 		JLabel lblAppointmentReschedulereminderRemark = new JLabel("Appointment Reschedule/Reminder Remark:");
 		lblAppointmentReschedulereminderRemark.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -183,7 +183,7 @@ public class DataEntryPanel {
 		jpnlEnqMade.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		jpnlEnqMade.setBackground(new Color(153, 204, 204));
 		
-		JLabel lblAppTime = new JLabel("Time:");
+		JLabel lblAppTime = new JLabel("Date:");
 		lblAppTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		JPanel pnlCJ = new JPanel();
@@ -265,12 +265,20 @@ public class DataEntryPanel {
 		cbAppFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbAppFup1.setBackground(new Color(153, 204, 204));
 		
+		JTextArea taCJRmk = new JTextArea();
+		taCJRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
+		scrpCJRmk.setViewportView(taCJRmk);
+		
+		JTextArea txtaAppReRmk = new JTextArea();
+		txtaAppReRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
+		scrpAppReRmk.setViewportView(txtaAppReRmk);
+		
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		GroupLayout groupLayout = new GroupLayout(DataEntryFrame.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
@@ -282,17 +290,17 @@ public class DataEntryPanel {
 							.addGap(16)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+									.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblAppReRmkTime)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
+									.addComponent(lblAppReRmkDat))
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+									.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtfldAppReDate, 0, 0, Short.MAX_VALUE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -311,12 +319,12 @@ public class DataEntryPanel {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 290, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addComponent(txtfldContact))
-								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblFirstName)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
@@ -330,10 +338,8 @@ public class DataEntryPanel {
 							.addGroup(groupLayout.createSequentialGroup()
 								.addComponent(lblCJRemark)
 								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE))))
-					.addGap(12))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 661, GroupLayout.PREFERRED_SIZE)
+								.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 661, GroupLayout.PREFERRED_SIZE))
 					.addGap(12))
 		);
 		groupLayout.setVerticalGroup(
@@ -372,14 +378,14 @@ public class DataEntryPanel {
 							.addComponent(lblAppointmentReschedulereminder, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblAppReRmkTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblAppReRmkDat, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblAppointmentReschedulereminderRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
@@ -392,7 +398,7 @@ public class DataEntryPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblCJRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
 					.addComponent(btnSubmit)
 					.addContainerGap())
 		);
@@ -576,13 +582,7 @@ public class DataEntryPanel {
 		);
 		jpnlAppMade.setLayout(gl_jpnlAppMade);
 		
-		JTextArea taCJRmk = new JTextArea();
-		taCJRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
-		scrpCJRmk.setViewportView(taCJRmk);
 		
-		JTextArea txtaAppReRmk = new JTextArea();
-		txtaAppReRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
-		scrpAppReRmk.setViewportView(txtaAppReRmk);
 		
 		lblThisJpanelIs = new JLabel("this jpanel is for eyevision name and logo");
 		lblThisJpanelIs.setFont(new Font("Tahoma", Font.PLAIN, 24));
