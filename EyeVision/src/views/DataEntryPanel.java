@@ -28,6 +28,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
+import com.toedter.calendar.JDateChooser;
 
 public class DataEntryPanel {
 
@@ -41,7 +42,6 @@ public class DataEntryPanel {
 	private final ButtonGroup btngrpCallType = new ButtonGroup();
 	private final ButtonGroup btngrpAppointMade = new ButtonGroup();
 	private JTextField txtfldAppTime;
-	private JTextField txtfldAppDate;
 	private JTextField txtfldAppReTime;
 	private JTextField txtfldAppReDate;
 	private final ButtonGroup btngrpEnqMade = new ButtonGroup();
@@ -143,10 +143,6 @@ public class DataEntryPanel {
 		txtfldAppTime = new JTextField();
 		txtfldAppTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtfldAppTime.setColumns(10);
-		
-		txtfldAppDate = new JTextField();
-		txtfldAppDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		txtfldAppDate.setColumns(10);
 		
 		JLabel lblAppointmentReschedulereminder = new JLabel("Appointment Reschedule/Reminder date:");
 		lblAppointmentReschedulereminder.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -282,85 +278,90 @@ public class DataEntryPanel {
 		cbCourse.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbCourse.setBackground(SystemColor.activeCaptionBorder);
 		
+		JDateChooser JdatechoserAppDate = new JDateChooser();
+		
+		JDateChooser dateChooser = new JDateChooser();
+		
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		GroupLayout groupLayout = new GroupLayout(DataEntryFrame.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jpnlEnqMade, GroupLayout.PREFERRED_SIZE, 640, GroupLayout.PREFERRED_SIZE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblAppointmentReschedulereminder)
-								.addComponent(lblAppointmentDateTime))
-							.addGap(16)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblAppReRmkDat))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
-							.addPreferredGap(ComponentPlacement.RELATED)
+							.addContainerGap()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtfldAppReDate, 0, 0, Short.MAX_VALUE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(rdbtnEnquiry, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(rdbtnCentre, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addComponent(rdbtnWalkin, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
-						.addComponent(jpnlAppMade, GroupLayout.PREFERRED_SIZE, 641, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblBranch)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblAppointmentReschedulereminderRemark)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 290, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(jpnlEnqMade, GroupLayout.PREFERRED_SIZE, 640, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(txtfldContact))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblAppointmentReschedulereminder)
+										.addComponent(lblAppointmentDateTime))
+									.addGap(16)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblAppReRmkDat))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(dateChooser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(JdatechoserAppDate, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)))
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblFirstName)
+									.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
-							.addGap(18)
-							.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(txtfldLastName, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
-						.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE))
-					.addGap(32))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblCourse)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(cbCourse, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(509, Short.MAX_VALUE))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnSubmit)
+									.addComponent(rdbtnEnquiry, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(rdbtnCentre, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addComponent(rdbtnWalkin, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
+								.addComponent(jpnlAppMade, GroupLayout.PREFERRED_SIZE, 641, GroupLayout.PREFERRED_SIZE)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblBranch)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(cbBranch, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblAppointmentReschedulereminderRemark)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(scrpAppReRmk, GroupLayout.PREFERRED_SIZE, 290, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblContact, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtfldContact))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblFirstName)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtfldFirstName, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
+									.addGap(18)
+									.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtfldLastName, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
+								.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE))
+							.addGap(11))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblCJRemark)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(33, Short.MAX_VALUE))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-					.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 662, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(21, Short.MAX_VALUE))
+							.addContainerGap()
+							.addComponent(lblCourse)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(cbCourse, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(btnSubmit)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblCJRemark)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE))))
+						.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 662, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -399,13 +400,15 @@ public class DataEntryPanel {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblAppTime, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtfldAppTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtfldAppDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+								.addComponent(txtfldAppTime, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+								.addComponent(JdatechoserAppDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblAppReRmkDat, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtfldAppReTime, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(dateChooser, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+									.addComponent(txtfldAppReDate, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+									.addComponent(lblAppReRmkDat, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+									.addComponent(txtfldAppReTime, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)))))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblAppointmentReschedulereminderRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
