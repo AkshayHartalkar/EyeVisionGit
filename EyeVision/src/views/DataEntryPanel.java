@@ -10,6 +10,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JRadioButton;
@@ -104,7 +105,6 @@ public class DataEntryPanel {
 	 */
 	private void initialize() {
 		DataEntryFrame = new JFrame();
-		DataEntryFrame.setResizable(false);
 		DataEntryFrame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 18));
 		DataEntryFrame.getContentPane().setBackground(new Color(102, 204, 204));
 		
@@ -302,6 +302,15 @@ public class DataEntryPanel {
 		JLabel lblCourse = new JLabel("Course:");
 		lblCourse.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
+		cbCJFup = new JCheckBox("Follow-up");
+		cbCJFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbCJFup.setBackground(new Color(153, 204, 204));
+		
+		cbCJFupDnd = new JCheckBox("Dnd");
+		
+		cbCJFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbCJFupDnd.setBackground(new Color(153, 204, 204));
+		
 		JComboBox cbCourse = new JComboBox();
 		cbCourse.setModel(new DefaultComboBoxModel(new String[] {"ABC", "XYZ", "PQR"}));
 		cbCourse.setSelectedIndex(0);
@@ -309,13 +318,33 @@ public class DataEntryPanel {
 		cbCourse.setBackground(SystemColor.activeCaptionBorder);
 		
 		JDateChooser JdatechoserAppDate = new JDateChooser();
-		JdatechoserAppDate.setDateFormatString("dd MM, yyyy");
-		JdatechoserAppDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		JdatechoserAppDate.setDateFormatString("dd-MM-yyyy");
+		JdatechoserAppDate.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		JDateChooser jdatechoserAppReDate = new JDateChooser();
-		jdatechoserAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jdatechoserAppReDate.setDateFormatString("dd-MM-yyyy");
+		jdatechoserAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		
+		cbEnqFup2 = new JCheckBox("Follow-up 2");
+		cbEnqFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbEnqFup2.setBackground(new Color(153, 204, 204));
+		
+		cbEnqFupDnd = new JCheckBox("Dnd");
+		cbEnqFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbEnqFupDnd.setBackground(new Color(153, 204, 204));
+		
+		cbAppFup2 = new JCheckBox("Follow-up 2");
+		cbAppFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbAppFup2.setBackground(new Color(153, 204, 204));
+		
+		cbAppFupDnd = new JCheckBox("Dnd");
+		
+		cbAppFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbAppFupDnd.setBackground(new Color(153, 204, 204));
+		
+		lblLogo = new JLabel("this jpanel is for eyevision name and logo");
+		lblLogo.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		GroupLayout groupLayout = new GroupLayout(DataEntryFrame.getContentPane());
@@ -344,9 +373,9 @@ public class DataEntryPanel {
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(jdatechoserAppReDate, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(JdatechoserAppDate, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(jdatechoserAppReDate, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+										.addComponent(JdatechoserAppDate, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -462,14 +491,7 @@ public class DataEntryPanel {
 					.addContainerGap())
 		);
 		
-		cbCJFup = new JCheckBox("Follow-up");
-		cbCJFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbCJFup.setBackground(new Color(153, 204, 204));
 		
-		cbCJFupDnd = new JCheckBox("Dnd");
-		
-		cbCJFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbCJFupDnd.setBackground(new Color(153, 204, 204));
 		GroupLayout gl_jpnlCJFup = new GroupLayout(jpnlCJFup);
 		gl_jpnlCJFup.setHorizontalGroup(
 			gl_jpnlCJFup.createParallelGroup(Alignment.LEADING)
@@ -527,13 +549,7 @@ public class DataEntryPanel {
 		
 		
 		
-		cbEnqFup2 = new JCheckBox("Follow-up 2");
-		cbEnqFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbEnqFup2.setBackground(new Color(153, 204, 204));
 		
-		cbEnqFupDnd = new JCheckBox("Dnd");
-		cbEnqFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbEnqFupDnd.setBackground(new Color(153, 204, 204));
 		GroupLayout gl_jpnlEnqFup = new GroupLayout(jpnlEnqFup);
 		gl_jpnlEnqFup.setHorizontalGroup(
 			gl_jpnlEnqFup.createParallelGroup(Alignment.LEADING)
@@ -596,14 +612,7 @@ public class DataEntryPanel {
 		
 		
 		
-		cbAppFup2 = new JCheckBox("Follow-up 2");
-		cbAppFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbAppFup2.setBackground(new Color(153, 204, 204));
 		
-		cbAppFupDnd = new JCheckBox("Dnd");
-		
-		cbAppFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		cbAppFupDnd.setBackground(new Color(153, 204, 204));
 		GroupLayout gl_jpnlAppFup = new GroupLayout(jpnlAppFup);
 		gl_jpnlAppFup.setHorizontalGroup(
 			gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
@@ -670,9 +679,7 @@ public class DataEntryPanel {
 		jpnlAppMade.setLayout(gl_jpnlAppMade);
 		
 		
-		
-		lblLogo = new JLabel("this jpanel is for eyevision name and logo");
-		lblLogo.setFont(new Font("Tahoma", Font.PLAIN, 24));
+
 		GroupLayout gl_jpnlLogo = new GroupLayout(jpnlLogo);
 		gl_jpnlLogo.setHorizontalGroup(
 			gl_jpnlLogo.createParallelGroup(Alignment.LEADING)
@@ -803,7 +810,7 @@ public class DataEntryPanel {
 		
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JOptionPane.showMessageDialog(null, "Sumit Bhosdika");
 			}
 		});
 		
