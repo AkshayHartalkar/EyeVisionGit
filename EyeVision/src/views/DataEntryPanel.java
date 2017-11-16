@@ -29,13 +29,15 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DataEntryPanel {
 
 	private JFrame DataEntryFrame;
 	private JTextField txtfldFirstName;
 	private JTextField txtfldLastName;
-	private JLabel lblThisJpanelIs;
+	private JLabel lblLogo;
 	private JLabel lblContact;
 	private JTextField txtfldContact;
 	private JLabel lblCallType;
@@ -46,6 +48,26 @@ public class DataEntryPanel {
 	private JTextField txtfldAppReDate;
 	private final ButtonGroup btngrpEnqMade = new ButtonGroup();
 	private final ButtonGroup btngrpCJ = new ButtonGroup();
+	private JRadioButton rdbtnAppMadeNo;
+	private JPanel jpnlAppFup;
+	private JRadioButton rdbtnAppMadeYes;
+	private JCheckBox cbAppFup1;
+	private JCheckBox cbAppFup2;
+	private JCheckBox cbAppFup3;
+	private JCheckBox cbEnqFup1;
+	private JCheckBox cbEnqFup2;
+	private JCheckBox cbEnqFup3;
+	private JCheckBox cbCJFup;
+	private JRadioButton rdbtnCJYes;
+	private JRadioButton rdbtnCJNo;
+	private JRadioButton rdbtnEnqMadeYes;
+	private JRadioButton rdbtnEnqMadeNo;
+	private JCheckBox cbAppFupDnd;
+	private JCheckBox cbEnqFupDnd;
+	private JPanel jpnlEnqFup;
+	private JPanel jpnlCJFup;
+	private JCheckBox cbCJFupDnd;
+	private JButton btnSubmit;
 
 	/**
 	 * Launch the application.
@@ -168,7 +190,9 @@ public class DataEntryPanel {
 		
 		JScrollPane scrpCJRmk = new JScrollPane();
 		
-		JButton btnSubmit = new JButton("Sumit");
+		btnSubmit = new JButton("Sumit");
+		
+		
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		JPanel jpnlAppMade = new JPanel();
@@ -189,17 +213,18 @@ public class DataEntryPanel {
 		JLabel lblCJ = new JLabel("Course Join?");
 		lblCJ.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JRadioButton rdbtnCJYes = new JRadioButton("Yes");
+		rdbtnCJYes = new JRadioButton("Yes");
 		btngrpCJ.add(rdbtnCJYes);
 		rdbtnCJYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnCJYes.setBackground(new Color(153, 204, 204));
 		
-		JRadioButton rdbtnCJNo = new JRadioButton("No");
+		rdbtnCJNo = new JRadioButton("No");
 		btngrpCJ.add(rdbtnCJNo);
 		rdbtnCJNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnCJNo.setBackground(new Color(153, 204, 204));
 		
-		JPanel jpnlCJFup = new JPanel();
+		jpnlCJFup = new JPanel();
+		jpnlCJFup.setVisible(false);
 		jpnlCJFup.setBackground(new Color(153, 204, 204));
 		
 		JLabel label_5 = new JLabel("No Course Join Follw-ups");
@@ -209,20 +234,22 @@ public class DataEntryPanel {
 		JLabel lblEnquiryMade = new JLabel("Enquiry made?");
 		lblEnquiryMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JRadioButton rdbtnEnqMadeYes = new JRadioButton("Yes");
+		rdbtnEnqMadeYes = new JRadioButton("Yes");
 		btngrpEnqMade.add(rdbtnEnqMadeYes);
 		rdbtnEnqMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnEnqMadeYes.setBackground(new Color(153, 204, 204));
 		
-		JRadioButton rdbtnEnqMadeNo = new JRadioButton("No");
+		rdbtnEnqMadeNo = new JRadioButton("No");
+		
 		btngrpEnqMade.add(rdbtnEnqMadeNo);
 		rdbtnEnqMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnEnqMadeNo.setBackground(new Color(153, 204, 204));
 		
-		JPanel pnlEnqFup = new JPanel();
-		pnlEnqFup.setBackground(new Color(153, 204, 204));
+		jpnlEnqFup = new JPanel();
+		jpnlEnqFup.setVisible(false);
+		jpnlEnqFup.setBackground(new Color(153, 204, 204));
 		
-		JCheckBox cbEnqFup3 = new JCheckBox("Follow-up 3");
+		cbEnqFup3 = new JCheckBox("Follow-up 3");
 		cbEnqFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbEnqFup3.setBackground(new Color(153, 204, 204));
 		
@@ -230,34 +257,37 @@ public class DataEntryPanel {
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		label_3.setBackground(new Color(153, 204, 204));
 		
-		JCheckBox cbEnqFup1 = new JCheckBox("Follow-up 1");
+		cbEnqFup1 = new JCheckBox("Follow-up 1");
 		cbEnqFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbEnqFup1.setBackground(new Color(153, 204, 204));
 		
-		JLabel label = new JLabel("Appointment made?");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		JLabel lblAppointmentMade = new JLabel("Appointment made?");
+		lblAppointmentMade.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JRadioButton rdbtnAppMadeYes = new JRadioButton("Yes");
+		rdbtnAppMadeYes = new JRadioButton("Yes");
+		
 		btngrpAppointMade.add(rdbtnAppMadeYes);
 		rdbtnAppMadeYes.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnAppMadeYes.setBackground(new Color(153, 204, 204));
 		
-		JRadioButton rdbtnAppMadeNo = new JRadioButton("No");
+		rdbtnAppMadeNo = new JRadioButton("No");
+		
 		btngrpAppointMade.add(rdbtnAppMadeNo);
 		rdbtnAppMadeNo.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		rdbtnAppMadeNo.setBackground(new Color(153, 204, 204));
 		
-		JPanel JpnlAppFup = new JPanel();
-		JpnlAppFup.setBackground(new Color(153, 204, 204));
+		jpnlAppFup = new JPanel();
+		jpnlAppFup.setVisible(false);
+		jpnlAppFup.setBackground(new Color(153, 204, 204));
 		
-		JCheckBox cbAppFup3 = new JCheckBox("Follow-up 3");
+		cbAppFup3 = new JCheckBox("Follow-up 3");
 		cbAppFup3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbAppFup3.setBackground(new Color(153, 204, 204));
 		
 		JLabel lblAppFup = new JLabel("No Appointment Follw-ups");
 		lblAppFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JCheckBox cbAppFup1 = new JCheckBox("Follow-up 1");
+		cbAppFup1 = new JCheckBox("Follow-up 1");
 		cbAppFup1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbAppFup1.setBackground(new Color(153, 204, 204));
 		
@@ -279,8 +309,11 @@ public class DataEntryPanel {
 		cbCourse.setBackground(SystemColor.activeCaptionBorder);
 		
 		JDateChooser JdatechoserAppDate = new JDateChooser();
+		JdatechoserAppDate.setDateFormatString("dd MM, yyyy");
+		JdatechoserAppDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		JDateChooser dateChooser = new JDateChooser();
+		JDateChooser jdatechoserAppReDate = new JDateChooser();
+		jdatechoserAppReDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		
 		
@@ -312,7 +345,7 @@ public class DataEntryPanel {
 									.addComponent(txtfldAppReDate, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(dateChooser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(jdatechoserAppReDate, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(JdatechoserAppDate, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblCallType, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
@@ -345,8 +378,7 @@ public class DataEntryPanel {
 									.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
 									.addComponent(txtfldLastName, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
-								.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE))
-							.addGap(11))
+								.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblCourse)
@@ -404,7 +436,7 @@ public class DataEntryPanel {
 								.addComponent(JdatechoserAppDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(dateChooser, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+								.addComponent(jdatechoserAppReDate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 									.addComponent(txtfldAppReDate, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
 									.addComponent(lblAppReRmkDat, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
@@ -425,23 +457,30 @@ public class DataEntryPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblCJRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+					.addGap(27)
 					.addComponent(btnSubmit)
 					.addContainerGap())
 		);
 		
-		JCheckBox CbCJFup = new JCheckBox("Follow-up");
-		CbCJFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		CbCJFup.setBackground(new Color(153, 204, 204));
+		cbCJFup = new JCheckBox("Follow-up");
+		cbCJFup.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbCJFup.setBackground(new Color(153, 204, 204));
+		
+		cbCJFupDnd = new JCheckBox("Dnd");
+		
+		cbCJFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbCJFupDnd.setBackground(new Color(153, 204, 204));
 		GroupLayout gl_jpnlCJFup = new GroupLayout(jpnlCJFup);
 		gl_jpnlCJFup.setHorizontalGroup(
 			gl_jpnlCJFup.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 237, Short.MAX_VALUE)
 				.addGroup(gl_jpnlCJFup.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_jpnlCJFup.createParallelGroup(Alignment.LEADING)
-						.addComponent(CbCJFup)
-						.addComponent(label_5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addGroup(gl_jpnlCJFup.createSequentialGroup()
+							.addComponent(cbCJFup)
+							.addGap(18)
+							.addComponent(cbCJFupDnd, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
+						.addComponent(label_5, GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		gl_jpnlCJFup.setVerticalGroup(
@@ -449,8 +488,10 @@ public class DataEntryPanel {
 				.addGroup(gl_jpnlCJFup.createSequentialGroup()
 					.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(CbCJFup)
-					.addContainerGap(31, Short.MAX_VALUE))
+					.addGroup(gl_jpnlCJFup.createParallelGroup(Alignment.LEADING)
+						.addComponent(cbCJFup)
+						.addComponent(cbCJFupDnd, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(27, Short.MAX_VALUE))
 		);
 		jpnlCJFup.setLayout(gl_jpnlCJFup);
 		GroupLayout gl_pnlCJ = new GroupLayout(pnlCJ);
@@ -486,34 +527,44 @@ public class DataEntryPanel {
 		
 		
 		
-		JCheckBox cbEnqFup2 = new JCheckBox("Follow-up 2");
+		cbEnqFup2 = new JCheckBox("Follow-up 2");
 		cbEnqFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbEnqFup2.setBackground(new Color(153, 204, 204));
-		GroupLayout gl_pnlEnqFup = new GroupLayout(pnlEnqFup);
-		gl_pnlEnqFup.setHorizontalGroup(
-			gl_pnlEnqFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_pnlEnqFup.createSequentialGroup()
+		
+		cbEnqFupDnd = new JCheckBox("Dnd");
+		cbEnqFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbEnqFupDnd.setBackground(new Color(153, 204, 204));
+		GroupLayout gl_jpnlEnqFup = new GroupLayout(jpnlEnqFup);
+		gl_jpnlEnqFup.setHorizontalGroup(
+			gl_jpnlEnqFup.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_jpnlEnqFup.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_pnlEnqFup.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_jpnlEnqFup.createParallelGroup(Alignment.LEADING)
 						.addComponent(cbEnqFup3, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
-						.addComponent(cbEnqFup1)
+						.addGroup(gl_jpnlEnqFup.createSequentialGroup()
+							.addComponent(cbEnqFup1)
+							.addGap(18)
+							.addComponent(cbEnqFupDnd, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
 						.addComponent(cbEnqFup2, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
 						.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(19, Short.MAX_VALUE))
+					.addContainerGap(81, Short.MAX_VALUE))
 		);
-		gl_pnlEnqFup.setVerticalGroup(
-			gl_pnlEnqFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_pnlEnqFup.createSequentialGroup()
+		gl_jpnlEnqFup.setVerticalGroup(
+			gl_jpnlEnqFup.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_jpnlEnqFup.createSequentialGroup()
 					.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addGap(7)
-					.addComponent(cbEnqFup1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(cbEnqFup2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(cbEnqFup3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_jpnlEnqFup.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_jpnlEnqFup.createSequentialGroup()
+							.addComponent(cbEnqFup1)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(cbEnqFup2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(cbEnqFup3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+						.addComponent(cbEnqFupDnd, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
-		pnlEnqFup.setLayout(gl_pnlEnqFup);
+		jpnlEnqFup.setLayout(gl_jpnlEnqFup);
 		GroupLayout gl_jpnlEnqMade = new GroupLayout(jpnlEnqMade);
 		gl_jpnlEnqMade.setHorizontalGroup(
 			gl_jpnlEnqMade.createParallelGroup(Alignment.TRAILING)
@@ -524,7 +575,7 @@ public class DataEntryPanel {
 					.addComponent(rdbtnEnqMadeYes, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addComponent(rdbtnEnqMadeNo, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-					.addComponent(pnlEnqFup, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE))
+					.addComponent(jpnlEnqFup, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE))
 		);
 		gl_jpnlEnqMade.setVerticalGroup(
 			gl_jpnlEnqMade.createParallelGroup(Alignment.LEADING)
@@ -538,60 +589,69 @@ public class DataEntryPanel {
 									.addComponent(lblEnquiryMade, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
 								.addComponent(rdbtnEnqMadeYes, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 								.addComponent(rdbtnEnqMadeNo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(pnlEnqFup, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE))
+						.addComponent(jpnlEnqFup, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		jpnlEnqMade.setLayout(gl_jpnlEnqMade);
 		
 		
 		
-		JCheckBox cbAppFup2 = new JCheckBox("Follow-up 2");
+		cbAppFup2 = new JCheckBox("Follow-up 2");
 		cbAppFup2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cbAppFup2.setBackground(new Color(153, 204, 204));
-		GroupLayout gl_JpnlAppFup = new GroupLayout(JpnlAppFup);
-		gl_JpnlAppFup.setHorizontalGroup(
-			gl_JpnlAppFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_JpnlAppFup.createSequentialGroup()
+		
+		cbAppFupDnd = new JCheckBox("Dnd");
+		
+		cbAppFupDnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbAppFupDnd.setBackground(new Color(153, 204, 204));
+		GroupLayout gl_jpnlAppFup = new GroupLayout(jpnlAppFup);
+		gl_jpnlAppFup.setHorizontalGroup(
+			gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_jpnlAppFup.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_JpnlAppFup.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_JpnlAppFup.createSequentialGroup()
+					.addGroup(gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_jpnlAppFup.createSequentialGroup()
 							.addComponent(cbAppFup1)
+							.addGap(18)
+							.addComponent(cbAppFupDnd)
 							.addContainerGap())
-						.addGroup(gl_JpnlAppFup.createParallelGroup(Alignment.LEADING)
-							.addGroup(gl_JpnlAppFup.createSequentialGroup()
-								.addComponent(lblAppFup, GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+						.addGroup(gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_jpnlAppFup.createSequentialGroup()
+								.addComponent(lblAppFup, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
 								.addContainerGap())
-							.addGroup(gl_JpnlAppFup.createSequentialGroup()
-								.addGroup(gl_JpnlAppFup.createParallelGroup(Alignment.LEADING, false)
+							.addGroup(gl_jpnlAppFup.createSequentialGroup()
+								.addGroup(gl_jpnlAppFup.createParallelGroup(Alignment.LEADING, false)
 									.addComponent(cbAppFup3, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
 									.addComponent(cbAppFup2, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE))
 								.addGap(111)))))
 		);
-		gl_JpnlAppFup.setVerticalGroup(
-			gl_JpnlAppFup.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_JpnlAppFup.createSequentialGroup()
+		gl_jpnlAppFup.setVerticalGroup(
+			gl_jpnlAppFup.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_jpnlAppFup.createSequentialGroup()
 					.addComponent(lblAppFup, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(cbAppFup1)
+					.addGroup(gl_jpnlAppFup.createParallelGroup(Alignment.BASELINE)
+						.addComponent(cbAppFup1)
+						.addComponent(cbAppFupDnd, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
 					.addGap(3)
 					.addComponent(cbAppFup2, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(cbAppFup3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
-		JpnlAppFup.setLayout(gl_JpnlAppFup);
+		jpnlAppFup.setLayout(gl_jpnlAppFup);
 		GroupLayout gl_jpnlAppMade = new GroupLayout(jpnlAppMade);
 		gl_jpnlAppMade.setHorizontalGroup(
 			gl_jpnlAppMade.createParallelGroup(Alignment.TRAILING)
 				.addGroup(Alignment.LEADING, gl_jpnlAppMade.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(label, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)
+					.addComponent(lblAppointmentMade, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)
 					.addGap(16)
 					.addComponent(rdbtnAppMadeYes, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
 					.addGap(26)
 					.addComponent(rdbtnAppMadeNo, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
-					.addComponent(JpnlAppFup, GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
+					.addComponent(jpnlAppFup, GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
 		);
 		gl_jpnlAppMade.setVerticalGroup(
 			gl_jpnlAppMade.createParallelGroup(Alignment.LEADING)
@@ -602,35 +662,35 @@ public class DataEntryPanel {
 							.addGroup(gl_jpnlAppMade.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_jpnlAppMade.createParallelGroup(Alignment.BASELINE)
 									.addComponent(rdbtnAppMadeYes, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-									.addComponent(label, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+									.addComponent(lblAppointmentMade, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
 								.addComponent(rdbtnAppMadeNo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(JpnlAppFup, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))
+						.addComponent(jpnlAppFup, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		jpnlAppMade.setLayout(gl_jpnlAppMade);
 		
 		
 		
-		lblThisJpanelIs = new JLabel("this jpanel is for eyevision name and logo");
-		lblThisJpanelIs.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblLogo = new JLabel("this jpanel is for eyevision name and logo");
+		lblLogo.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		GroupLayout gl_jpnlLogo = new GroupLayout(jpnlLogo);
 		gl_jpnlLogo.setHorizontalGroup(
 			gl_jpnlLogo.createParallelGroup(Alignment.LEADING)
 				.addGroup(Alignment.TRAILING, gl_jpnlLogo.createSequentialGroup()
 					.addContainerGap(99, Short.MAX_VALUE)
-					.addComponent(lblThisJpanelIs, GroupLayout.PREFERRED_SIZE, 459, GroupLayout.PREFERRED_SIZE)
+					.addComponent(lblLogo, GroupLayout.PREFERRED_SIZE, 459, GroupLayout.PREFERRED_SIZE)
 					.addGap(93))
 		);
 		gl_jpnlLogo.setVerticalGroup(
 			gl_jpnlLogo.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_jpnlLogo.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblThisJpanelIs, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+					.addComponent(lblLogo, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
 					.addGap(5))
 		);
 		jpnlLogo.setLayout(gl_jpnlLogo);
 		DataEntryFrame.getContentPane().setLayout(groupLayout);
-		DataEntryFrame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{jpnlLogo, lblThisJpanelIs, lblFirstName, txtfldFirstName, lblLastName, txtfldLastName, lblContact, txtfldContact, lblCallType, rdbtnEnquiry, rdbtnCentre, rdbtnWalkin}));
+		DataEntryFrame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{jpnlLogo, lblLogo, lblFirstName, txtfldFirstName, lblLastName, txtfldLastName, lblContact, txtfldContact, lblCallType, rdbtnEnquiry, rdbtnCentre, rdbtnWalkin}));
 		DataEntryFrame.setFont(new Font("Dialog", Font.BOLD, 12));
 		DataEntryFrame.setTitle("Customer Data Entry Window");
 		DataEntryFrame.setBounds(100, 100, 669, 1020);
@@ -641,7 +701,113 @@ public class DataEntryPanel {
 	////////////////////////////////////////Initialize the Events.
 	*/
 	private void CreateEvents() {
-		// TODO Auto-generated method stub
+								//######### Appointment Follow up and Dnd########
+		
+		
+		rdbtnAppMadeNo.addActionListener(new ActionListener() {			//sets all followup panel visible
+			public void actionPerformed(ActionEvent arg0) {				//on selecting appointment as No
+				if(rdbtnAppMadeNo.isSelected())
+					jpnlAppFup.setVisible(true);							
+				
+			}
+			
+		});
+		rdbtnAppMadeYes.addActionListener(new ActionListener() {		//sets all followup panel Invisible
+			public void actionPerformed(ActionEvent e) {				//on selecting appointment as Yes
+				if(rdbtnAppMadeYes.isSelected())
+					jpnlAppFup.setVisible(false);
+			}
+		});
+		
+		cbAppFupDnd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cbAppFupDnd.isSelected())							//sets all followups as selected
+				{														//on selecting Dnd
+					cbAppFup1.setSelected(true);
+				    cbAppFup2.setSelected(true);
+				    cbAppFup3.setSelected(true);
+				}
+				    else{
+				    	cbAppFup1.setSelected(false);					//sets all followups as unselected
+						cbAppFup2.setSelected(false);					//on unselecting Dnd
+						cbAppFup3.setSelected(false);
+				    }
+			}
+		});
+		
+								//######### Enquiry Follow up and Dnd########
+						
+						//Enquiry followup panel stays visible on both conditions(yes/no)
+		
+		
+		rdbtnEnqMadeNo.addActionListener(new ActionListener() {			//sets followup panel visible
+			public void actionPerformed(ActionEvent e) {				//on selecting Enquiry as No
+				if(rdbtnEnqMadeNo.isSelected())
+					jpnlEnqFup.setVisible(true);
+			}
+		});
+		
+		rdbtnEnqMadeYes.addActionListener(new ActionListener() {		//sets followup panel visible
+			public void actionPerformed(ActionEvent e) {				//on selecting Enquiry as Yes
+				if(rdbtnEnqMadeYes.isSelected())
+					jpnlEnqFup.setVisible(true);
+			}
+		});
+		
+		cbEnqFupDnd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cbEnqFupDnd.isSelected())							//sets all followups as selected
+				{														//on selecting Dnd
+					cbEnqFup1.setSelected(true);
+				    cbEnqFup2.setSelected(true);
+				    cbEnqFup3.setSelected(true);
+				}
+				else{													//sets all followups as unselected
+			    	cbEnqFup1.setSelected(false);						//on unselecting Dnd
+					cbEnqFup2.setSelected(false);
+					cbEnqFup3.setSelected(false);
+			    }
+			}
+		});
+		
+								//######### Course Join Follow up and Dnd########
+		
+		rdbtnCJYes.addActionListener(new ActionListener() {				//sets followup panel Invisible
+			public void actionPerformed(ActionEvent e) {				//on selecting Course as Yes
+				if(rdbtnCJYes.isSelected())
+					jpnlCJFup.setVisible(false);
+			}
+		});
+		
+		rdbtnCJNo.addActionListener(new ActionListener() {				//sets followup panel visible
+			public void actionPerformed(ActionEvent e) {				//on selecting Course as No
+				if(rdbtnCJNo.isSelected())
+					jpnlCJFup.setVisible(true);
+			}
+		});
+		
+		cbCJFupDnd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cbCJFupDnd.isSelected())								//sets followups as selected
+				{														//on selecting Dnd
+					cbCJFup.setSelected(true);
+				    
+				}
+				else{													//sets followups as unselected
+			    	cbCJFup.setSelected(false);							//on unselecting Dnd	
+			    }
+			}
+		});
+		
+								//######### Submit Button Event Handler########
+		
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		// TODO Auto-generated method stub lavda lasun
 		
 	}
 }
