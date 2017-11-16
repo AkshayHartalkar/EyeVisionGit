@@ -176,18 +176,18 @@ public class DataEntryPanel {
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		JPanel jpnlAppMade = new JPanel();
-		jpnlAppMade.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		jpnlAppMade.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		jpnlAppMade.setBackground(new Color(153, 204, 204));
 		
 		JPanel jpnlEnqMade = new JPanel();
-		jpnlEnqMade.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		jpnlEnqMade.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		jpnlEnqMade.setBackground(new Color(153, 204, 204));
 		
 		JLabel lblAppTime = new JLabel("Date:");
 		lblAppTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
 		JPanel pnlCJ = new JPanel();
-		pnlCJ.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		pnlCJ.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		pnlCJ.setBackground(new Color(153, 204, 204));
 		
 		JLabel lblCJ = new JLabel("Course Join?");
@@ -273,6 +273,15 @@ public class DataEntryPanel {
 		txtaAppReRmk.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		scrpAppReRmk.setViewportView(txtaAppReRmk);
 		
+		JLabel lblCourse = new JLabel("Course:");
+		lblCourse.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		JComboBox cbCourse = new JComboBox();
+		cbCourse.setModel(new DefaultComboBoxModel(new String[] {"ABC", "XYZ", "PQR"}));
+		cbCourse.setSelectedIndex(0);
+		cbCourse.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cbCourse.setBackground(SystemColor.activeCaptionBorder);
+		
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -332,15 +341,26 @@ public class DataEntryPanel {
 							.addComponent(lblLastName, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(txtfldLastName, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
-						.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-							.addComponent(btnSubmit)
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(lblCJRemark)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 661, GroupLayout.PREFERRED_SIZE))
-					.addGap(12))
+						.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE))
+					.addGap(32))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblCourse)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(cbCourse, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(509, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnSubmit)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblCJRemark)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(33, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addComponent(jpnlLogo, GroupLayout.PREFERRED_SIZE, 662, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(21, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -394,11 +414,15 @@ public class DataEntryPanel {
 					.addComponent(jpnlEnqMade, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(pnlCJ, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-					.addGap(9)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblCourse, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbCourse, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblCJRemark, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrpCJRmk, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
 					.addComponent(btnSubmit)
 					.addContainerGap())
 		);
@@ -606,7 +630,7 @@ public class DataEntryPanel {
 		DataEntryFrame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{jpnlLogo, lblThisJpanelIs, lblFirstName, txtfldFirstName, lblLastName, txtfldLastName, lblContact, txtfldContact, lblCallType, rdbtnEnquiry, rdbtnCentre, rdbtnWalkin}));
 		DataEntryFrame.setFont(new Font("Dialog", Font.BOLD, 12));
 		DataEntryFrame.setTitle("Customer Data Entry Window");
-		DataEntryFrame.setBounds(100, 100, 669, 993);
+		DataEntryFrame.setBounds(100, 100, 669, 1020);
 		DataEntryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
